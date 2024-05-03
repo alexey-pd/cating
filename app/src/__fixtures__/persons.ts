@@ -5,7 +5,8 @@ export const persons: Person[] = [
     id: 'b6c0',
     name: 'Kit',
     age: 5,
-    about: `Joyful and fluffy cat, ready to find a kitten for shared playtime and lazy days by the windowsill. There's never a dull moment with me!`,
+    about: `Joyful and fluffy cat, ready to find a kitten for shared playtime 
+    and lazy days by the windowsill. There's never a dull moment with me!`,
     location: 'New Home',
     zodiac: 'gemini',
     photos: ['./kit-1.jpeg', './kit-2.jpeg', './kit-3.jpeg'],

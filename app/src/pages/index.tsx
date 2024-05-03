@@ -1,4 +1,4 @@
-import { lazy, FC } from 'react';
+import { FC, lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 const MatchMakePage = lazy(() => import('./matchmake'));

@@ -1,11 +1,12 @@
-import { FC, useCallback } from 'react';
 import debounce from 'lodash.debounce';
-import { useTelegram, type Person } from '@/shared';
-import { Box } from '@radix-ui/themes';
-import { useSprings, animated } from '@react-spring/web';
-import { useDrag } from '@use-gesture/react';
-import { changeButtonState } from './lib';
+import { FC, useCallback } from 'react';
 
+import { Box } from '@radix-ui/themes';
+import { animated, useSprings } from '@react-spring/web';
+import { useDrag } from '@use-gesture/react';
+import { type Person, useTelegram } from '@/shared';
+
+import { changeButtonState } from './lib';
 
 export interface IMatchSwipeProps {
   list: Array<Person>;
@@ -28,7 +29,7 @@ export const MatchSwipe: FC<IMatchSwipeProps> = ({
   const width = window.innerWidth;
   const velocityMultiplier = 3.5;
   const { hapticFeedback } = useTelegram();
-
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const buttonButtonState = useCallback(
     debounce(() => {
       if (buttonBlockSelector) changeButtonState(true, buttonBlockSelector);
@@ -38,7 +39,7 @@ export const MatchSwipe: FC<IMatchSwipeProps> = ({
 
   const [props, api] = useSprings(
     list.length,
-    (i: number) => ({
+    () => ({
       tension: 800,
       friction: 100,
       clamp: true,
@@ -105,7 +106,7 @@ export const MatchSwipe: FC<IMatchSwipeProps> = ({
       preventAxisScroll: 'y',
       axis: 'x',
       enabled: swipeEnabled,
-      preventScroll: 400
+      preventScroll: 400,
     }
   );
 

@@ -1,4 +1,5 @@
 import { FC } from 'react';
+
 import { Theme } from '@radix-ui/themes';
 import { useTelegram } from '@/shared';
 

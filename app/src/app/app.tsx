@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 
-import { useTelegram } from '@/shared';
 import Router from '@/pages';
+import { useTelegram } from '@/shared';
+
 import { RouterProvider } from './providers';
 
 const App = (): JSX.Element => {
@@ -10,6 +11,7 @@ const App = (): JSX.Element => {
   useEffect(() => {
     tg.ready();
     tg.expand();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return (

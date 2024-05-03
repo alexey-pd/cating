@@ -10,6 +10,6 @@ export function useTelegram() {
     tg,
     user: tg.initDataUnsafe?.user,
     scheme: tg.colorScheme,
-    hapticFeedback: tg.HapticFeedback
+    hapticFeedback: tg.HapticFeedback,
   };
 }

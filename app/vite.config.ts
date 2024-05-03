@@ -1,8 +1,10 @@
+import { fileURLToPath } from 'url';
+
+import { defineConfig, loadEnv, splitVendorChunkPlugin } from 'vite';
+import svgr from 'vite-plugin-svgr';
+
 import legacy from '@vitejs/plugin-legacy';
 import react from '@vitejs/plugin-react';
-import svgr from 'vite-plugin-svgr';
-import { fileURLToPath } from 'url';
-import { defineConfig, splitVendorChunkPlugin, loadEnv } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => {
@@ -13,7 +15,11 @@ export default defineConfig(({ mode }) => {
     },
     plugins: [
       legacy({
-        targets: ['last 2 iOS major versions', 'last 3 Chrome versions', 'not IE 11'],
+        targets: [
+          'last 2 iOS major versions',
+          'last 3 Chrome versions',
+          'not IE 11',
+        ],
       }),
       react(),
       svgr(),

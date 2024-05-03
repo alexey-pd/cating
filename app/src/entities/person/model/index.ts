@@ -1,21 +1,20 @@
 import {
-  createStore,
   createEffect,
   createEvent,
+  createStore,
   forward,
   sample,
 } from 'effector';
-import { useStore, createGate, useGate } from 'effector-react';
+import { createGate, useGate, useStore } from 'effector-react';
 import { produce } from 'immer';
-import type { Person } from '@/shared';
+
 import { persons } from '@/__fixtures__';
+import type { Person } from '@/shared';
 
 export const removeLast = createEvent();
 export const PersonGate = createGate();
 
-export const getPersonListFx = createEffect(() => {
-  return Promise.resolve(persons);
-});
+export const getPersonListFx = createEffect(() => Promise.resolve(persons));
 
 const personsInitialState: Person[] = [];
 

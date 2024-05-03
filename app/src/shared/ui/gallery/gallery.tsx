@@ -1,8 +1,9 @@
 import { FC, useState } from 'react';
-import { Flex, Grid } from '@radix-ui/themes';
+
 import styled from '@emotion/styled';
+import { Flex, Grid } from '@radix-ui/themes';
+import { animated, config, useSpring } from '@react-spring/web';
 import { rearrangeArray, shouldForwardProp } from '@/shared/lib';
-import { useSpring, animated, config } from '@react-spring/web';
 
 export interface IGalleryProps {
   onClick?: () => void;

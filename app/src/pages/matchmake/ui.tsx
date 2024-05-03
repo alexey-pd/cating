@@ -1,15 +1,16 @@
 import { FC } from 'react';
+
+import { Box } from '@radix-ui/themes';
+import config from '@/config';
 import {
   Card,
-  selectors,
   events,
   gates,
   init as initPersons,
+  selectors,
 } from '@/entities';
-import { DISABLED_BY_ANIM_ID } from '@/shared';
-import { Box } from '@radix-ui/themes';
 import { MatchSwipe } from '@/features';
-import config from '@/config';
+import { DISABLED_BY_ANIM_ID } from '@/shared';
 
 initPersons();
 

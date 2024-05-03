@@ -1,8 +1,9 @@
 import { FC } from 'react';
+
 import { Button, Grid } from '@radix-ui/themes';
+import { DISABLED_BY_ANIM_ID } from '@/shared';
 import Check from '@/shared/ui/assets/svg/check.svg?react';
 import Close from '@/shared/ui/assets/svg/x.svg?react';
-import { DISABLED_BY_ANIM_ID } from '@/shared';
 
 export interface IBarProps {
   disabled?: boolean;
@@ -10,7 +11,11 @@ export interface IBarProps {
   onClickLeft?: () => void;
 }
 
-export const Bar: FC<IBarProps> = ({ onClickRight, onClickLeft, disabled }) => {
+export const Bar: FC<IBarProps> = ({
+  onClickRight,
+  onClickLeft,
+  disabled = false,
+}) => {
   const attributes = {
     [DISABLED_BY_ANIM_ID]: true,
   };
